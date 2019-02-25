@@ -1,10 +1,16 @@
-import { configure } from '@storybook/html';
-import { setOptions } from '@storybook/addon-options';
+import { configure, addParameters } from '@storybook/html';
+import { setOptions, withOptions } from '@storybook/addon-options';
 
-setOptions({
-  hierarchySeparator: /\/|\./, // matches a . or /
-  hierarchyRootSeparator: /\|/ // matches a |
+addParameters({
+  options: {
+    hierarchyRootSeparator: /\|/
+  }
 });
+
+// withOptions({
+//   hierarchySeparator: /\/|\./, // matches a . or /
+//   hierarchyRootSeparator: /\|/ // matches a |
+// });
 
 function loadStories() {
   require('../stories');
