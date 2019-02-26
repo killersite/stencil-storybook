@@ -13,9 +13,11 @@
   "scripts": {
     "build": "stencil build --docs",
     "start": "stencil build --dev --watch --serve",
-    "test": "stencil test --spec --e2e",
+    "test:generate-output": "jest --json --outputFile=.jest-test-results.json || true",
+    "test": "stencil test --spec --e2e --json --outputFile=jest-test-results.json",
     "test.watch": "stencil test --spec --e2e --watchAll",
     "storybook": "start-storybook -p 6006 -s ./dist",
+    "prebuild:storybook": "npm run test:generate-output",
     "build-storybook": "build-storybook"
   },
   "devDependencies": {
