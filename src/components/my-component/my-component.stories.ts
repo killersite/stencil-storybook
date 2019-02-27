@@ -1,5 +1,5 @@
 import { storiesOf } from '@storybook/html';
-import results from '../../../jest-test-results.json';
+import results from '../../jest-test-results.json';
 import { withTests } from '@storybook/addon-jest';
 
 storiesOf('My Component', module)
@@ -9,6 +9,7 @@ storiesOf('My Component', module)
     () =>
       '<my-component first="Stencil" last="\'Don\'t call me a framework\' JS"></my-component>',
     {
-      jest: ['my-component.e2e.ts']
+      jest: ['my-component.e2e.ts'],
+      notes: `this is where you would add notes about your component`
     }
   );

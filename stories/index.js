@@ -2,7 +2,6 @@ import { document, console } from 'global';
 import { storiesOf } from '@storybook/html';
 import { withActions, action } from '@storybook/addon-actions';
 import { withBackgrounds } from '@storybook/addon-backgrounds';
-import { withNotes } from '@storybook/addon-notes';
 import {
   array,
   boolean,
@@ -18,7 +17,6 @@ import {
 storiesOf('Demo', module)
   .addDecorator(withKnobs)
   .addDecorator(withBackgrounds)
-  .addDecorator(withNotes)
   .addParameters({
     backgrounds: [
       { name: 'light', value: '#eeeeee', default: true },
