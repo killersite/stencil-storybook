@@ -13,12 +13,41 @@
   "scripts": {
     "build": "stencil build --docs",
     "start": "stencil build --dev --watch --serve",
-    "test": "stencil test --spec --e2e",
-    "test.watch": "stencil test --spec --e2e --watchAll"
+    "test": "stencil test --spec --e2e --json --outputFile=src/jest-test-results.json",
+    "test-watch": "stencil test --spec --e2e --watchAll",
+    "storybook": "start-storybook -p 6006 -s ./dist",
+    "prebuild-storybook": "npm test || true",
+    "build-storybook": "build-storybook -s ./dist"
   },
-  "dependencies": {},
   "devDependencies": {
-    "@stencil/core": "~0.18.0"
+    "@babel/core": "^7.3.3",
+    "@stencil/core": "~0.18.0",
+    "@storybook/addon-a11y": "5.0.0-rc.6",
+    "@storybook/addon-actions": "5.0.0-rc.6",
+    "@storybook/addon-backgrounds": "5.0.0-rc.6",
+    "@storybook/addon-centered": "5.0.0-rc.6",
+    "@storybook/addon-events": "5.0.0-rc.6",
+    "@storybook/addon-jest": "5.0.0-rc.6",
+    "@storybook/addon-knobs": "5.0.0-rc.6",
+    "@storybook/addon-links": "5.0.0-rc.6",
+    "@storybook/addon-notes": "5.0.0-rc.6",
+    "@storybook/addon-options": "5.0.0-rc.6",
+    "@storybook/addon-storyshots": "5.0.0-rc.6",
+    "@storybook/addon-storysource": "5.0.0-rc.6",
+    "@storybook/addon-viewport": "5.0.0-rc.6",
+    "@storybook/addons": "5.0.0-rc.6",
+    "@storybook/core": "5.0.0-rc.6",
+    "@storybook/core-events": "5.0.0-rc.6",
+    "@storybook/html": "5.0.0-rc.6",
+    "@types/jest": "23.3.14",
+    "@types/node": "^11.9.4",
+    "@types/puppeteer": "1.12.1",
+    "babel-loader": "^8.0.5",
+    "format-json": "^1.0.3",
+    "global": "^4.3.2",
+    "jest": "^23.6.0",
+    "jest-cli": "23.6.0",
+    "puppeteer": "1.11.0"
   },
   "license": "MIT"
 }
